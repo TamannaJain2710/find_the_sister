@@ -59,8 +59,6 @@ class lock {
                 this.button1.hide();
                 this.access1.hide();
                 score++;
-                this.button2.show();
-                this.access2.show();
             }else if (system.authenticate(accessCode1,this.access1.value()) !== true){
                 textSize(50);
                 fill("black");
