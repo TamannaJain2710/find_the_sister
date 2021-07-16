@@ -55,16 +55,16 @@ class lock {
         this.access5.hide();
 
         this.button1.mousePressed(() => {
-            if(system.authenticate(accessCode1,this.access1.value())){
+            if(system.authenticate(accessCode1,this.access1.value()) === true){
                 this.button1.hide();
                 this.access1.hide();
                 score++;
-                clear()
-                //this.button2.display();
-                //this.access2.display();
+                this.button2.show();
+                this.access2.show();
+            }else if (system.authenticate(accessCode1,this.access1.value()) !== true){
+                textSize(50);
                 fill("black");
-                textSize(15);
-                text("What can you break, even if you never pick it up or touch it?", displayWidth/2 - 100,displayHeight/2)
+                text("wrong",displayWidth/2,displayHeight/2+50)
             }
         });
 
@@ -117,4 +117,14 @@ class lock {
         
 
     }
+    /*bs(){
+            this.button1.mousePressed(() => {
+                clear()
+                this.button2.display();
+                this.access2.display();
+                fill("black");
+                textSize(15);
+                text("What can you break, even if you never pick it up or touch it?", displayWidth/2 - 100,displayHeight/2)
+            })
+    }*/
 }
