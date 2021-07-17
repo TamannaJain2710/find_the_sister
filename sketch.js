@@ -26,8 +26,6 @@ function setup(){
     m7 = new Maze(,,20,100);
     m8 = new Maze(,,100,20);*/
 
-    //console.log(World.mouseX,World.mouseY);
-
     locks = new lock();
     system = new System();
 }
@@ -36,12 +34,40 @@ function draw(){
     background(bg);
     Engine.update(engine);
     locks.display();
-    //locks.bs();
     riddle();
+    console.log(mouseX,mouseY);
+    if(score === 1){
+        clear();
+        background(bg);
+        fill("black");
+        textSize(15);
+        text("What can you break, even if you never pick it up or touch it?", displayWidth/2 - 100,displayHeight/2)
+    } else if (score === 2){
+        clear();
+        background(bg);
+        fill("black");
+        textSize(15);
+        text("It is the rare case when today comes before yesterday", displayWidth/2 - 100,displayHeight/2)
+
+    } else if (score === 3){
+        clear();
+        background(bg);
+        fill("black");
+        textSize(15);
+        text("Mary's father has 4 children; \n three are named Nana, Nene, and Nini. \n So what is is the 4th child's name?", displayWidth/2 - 100,displayHeight/2-50)
+    } else if (score === 4){
+        clear();
+        background(bg);
+        fill("black");
+        textSize(15);
+        text("What begins with T, finishes with T, and has T in it?", displayWidth/2 - 100,displayHeight/2)
+    }
+    
     textSize(20);
     fill("white");
     text("Passed Riddles: " + score + "/5", 450, 50);
-    if(score === 1) {
+    
+    if (score === 5) {
         clear()
         background("black")
         fill("black")

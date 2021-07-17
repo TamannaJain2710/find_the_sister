@@ -13,56 +13,58 @@ class lock {
         this.access2 = createInput("Code2")
         this.access2.position(displayWidth/2 - 100,displayHeight/2 + 20);
         this.access2.style('background', 'white');  
+        this.access2.hide();
 
         this.button2 = createButton('Check');
         this.button2.position(displayWidth/2 - 100,displayHeight/2 + 50);
         this.button2.style('background', 'lightgrey');
+        this.button2.hide();
 
         this.access3 = createInput("Code3")
         this.access3.position(displayWidth/2 - 100,displayHeight/2 + 20);
         this.access3.style('background', 'white');  
+        this.access3.hide();
 
         this.button3 = createButton('Check');
         this.button3.position(displayWidth/2 - 100,displayHeight/2 + 50);
         this.button3.style('background', 'lightgrey');
+        this.button3.hide();
 
         this.access4 = createInput("Code4")
         this.access4.position(displayWidth/2 - 100,displayHeight/2 + 20);
         this.access4.style('background', 'white');  
+        this.access4.hide();
 
         this.button4 = createButton('Check');
         this.button4.position(displayWidth/2 - 100,displayHeight/2 + 50);
         this.button4.style('background', 'lightgrey');
+        this.button4.hide();
 
         this.access5 = createInput("Code5")
         this.access5.position( displayWidth/2 - 100,displayHeight/2 + 20);
         this.access5.style('background', 'white');  
+        this.access5.hide();
 
         this.button5 = createButton('Check');
         this.button5.position(displayWidth/2 - 100,displayHeight/2 + 50);
         this.button5.style('background', 'lightgrey');
+        this.button5.hide();
         
     }
 
     display(){
-        this.button2.hide();
-        this.access2.hide();
-        this.button3.hide();
-        this.access3.hide();
-        this.button4.hide();
-        this.access4.hide();
-        this.button5.hide();
-        this.access5.hide();
 
         this.button1.mousePressed(() => {
             if(system.authenticate(accessCode1,this.access1.value()) === true){
                 this.button1.hide();
                 this.access1.hide();
+                this.button2.show();
+                this.access2.show();
                 score++;
             }else if (system.authenticate(accessCode1,this.access1.value()) !== true){
-                textSize(50);
+                textSize(100);
                 fill("black");
-                text("wrong",displayWidth/2,displayHeight/2+50)
+                text("Wrong Ans",200,200)
             }
         });
 
@@ -71,11 +73,8 @@ class lock {
                 this.button2.hide();
                 this.access2.hide();
                 score++;
-                //this.button3.display();
-                //this.access3.display();
-                fill("black");
-                textSize(15);
-                text("It is the rare case when today comes before yesterday.", displayWidth/2 - 100,displayHeight/2)
+                this.button3.show();
+                this.access3.show();
             }
         });
 
@@ -84,11 +83,8 @@ class lock {
                 this.button3.hide();
                 this.access3.hide();
                 score++;
-               // this.button4.display();
-               // this.access4.display();
-                fill("black");
-                textSize(15);
-                text("Mary's father has 4 children; three are named Nana, Nene, and Nini. So what is is the 4th child's name?", displayWidth/2 - 100,displayHeight/2);
+                this.button4.show();
+                this.access4.show();
             }
         });
 
@@ -97,12 +93,9 @@ class lock {
                 this.button4.hide();
                 this.access4.hide();
                 score++;
-               // this.button5.display();
-                this.access5.display();
-                fill("black");
-                textSize(15);
-                text("What begins with T, finishes with T, and has T in it?",displayWidth/2 - 100,displayHeight/2)
-            }
+                this.button5.show();
+                this.access5.show();
+                }
         });
 
         this.button5.mousePressed(() => {
@@ -115,14 +108,4 @@ class lock {
         
 
     }
-    /*bs(){
-            this.button1.mousePressed(() => {
-                clear()
-                this.button2.display();
-                this.access2.display();
-                fill("black");
-                textSize(15);
-                text("What can you break, even if you never pick it up or touch it?", displayWidth/2 - 100,displayHeight/2)
-            })
-    }*/
 }
