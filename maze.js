@@ -10,12 +10,16 @@ class Maze{
         this.height = height;
         this.width = width;
         Matter.Body.setAngle(this.body, this.angle);
-        console.log(this.body);
+        //console.log(this.body);
         World.add(world,this.body);
     }
-    display(){
+    display(){ 
+        var angle = this.body.angle;
+        push(); 
+        translate(this.body.position.x, this.body.position.y); 
+        rotate(angle); 
         fill("green");
         rect(this.x,this.y,this.width,this.height);
-
-    }
+        pop(); } 
+    
 }

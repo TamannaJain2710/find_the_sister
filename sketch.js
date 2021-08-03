@@ -16,7 +16,7 @@ function setup(){
     createCanvas(displayWidth - 10,displayHeight -110);
     engine = Engine.create();
     world = engine.world;
-    m1 = new Maze(0,370,20,20);
+   /* m1 = new Maze(0,370,20,20);
     m2 = new Maze(115, 185,20,100);
     m3 = new Maze(115,185,100,20);
     m4 = new Maze(115,285,100,20);
@@ -37,8 +37,10 @@ function setup(){
     m19 = new Maze(940,185,20,205);
     m20 = new Maze(940,185,100,20);
     m21 = new Maze(1040,185,20,100);
-    m22 = new Maze(940,285,100,20);
-    m23 = new Maze(200,200,20,100);
+    m22 = new Maze(940,285,100,20);*/
+
+    m23 = new Test(40,100,PI/7);
+  
     
 
     locks = new lock();
@@ -50,7 +52,9 @@ function draw(){
     Engine.update(engine);
     locks.display();
     riddle();
-   m1.display();
+
+    
+  /* m1.display();
    m2.display();
    m3.display();
    m4.display();
@@ -71,10 +75,13 @@ function draw(){
    m19.display();
    m20.display();
    m21.display();
-   m22.display();
-   m23.display();
-   m23.body.angle = -PI/2;
+   m22.display();*/
+  
+   //m23.body.angle = -PI/20;
    console.log(m23.body);
+  // Matter.body.setAngle(m23.body,-PI/10)
+
+   m23.display();
 
 
     /*if(score === 1){
@@ -117,5 +124,5 @@ function draw(){
         text("You Can Proceed",displayWidth/2 -100, displayHeight/2);
        
       }*/
-    drawSprites();
+    //drawSprites();
 }
